@@ -1,0 +1,19 @@
+# pre-commit framework configuration
+#
+# Install (one-time, post-clone):
+#   pipx install pre-commit         # or: pip install --user pre-commit
+#   pre-commit install --hook-type pre-push
+#
+# Why pre-push (not pre-commit):
+#   gitleaks scan runs once before the network round-trip, doesn't slow the
+#   per-commit inner loop, and still blocks secrets before they leave the
+#   laptop. CI (.github/workflows/gitleaks.yml) is the second gate.
+#
+# Gitleaks autodiscovers `.gitleaks.toml` in repo root, so no `--config` arg
+# is necessary as long as the file lives at the repo root.
+repos:
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: v8.24.2          # pinned — do not float to `master`
+    hooks:
+      - id: gitleaks
+        stages: [pre-push]

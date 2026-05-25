@@ -1,0 +1,29 @@
+name: gitleaks
+
+# Scansione secret su tutto il push e su ogni PR.
+# `fetch-depth: 0` necessario per scansionare l'intera history (non solo
+# l'ultimo commit). La GH Action `gitleaks/gitleaks-action@v2` per repo
+# pubblici individuali è gratis e non richiede GITLEAKS_LICENSE token.
+on:
+  push:
+    branches: ['**']
+  pull_request:
+    branches: ['**']
+
+jobs:
+  scan:
+    name: Detect secrets in commits and tree
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout (full history)
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Run gitleaks
+        uses: gitleaks/gitleaks-action@v2
+        env:
+          GITLEAKS_CONFIG: .gitleaks.toml
+          # GITLEAKS_NOTIFY_USER_LIST / GITLEAKS_ENABLE_COMMENTS: defaults OK

@@ -1,0 +1,89 @@
+
+# ── GSD baseline (auto-generated) ──
+.gsd
+.gsd-id
+.mcp.json
+.bg-shell/
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
+*.code-workspace
+.env
+.env.*
+!.env.example
+node_modules/
+.next/
+dist/
+build/
+__pycache__/
+*.pyc
+.venv/
+venv/
+target/
+vendor/
+*.log
+coverage/
+.cache/
+tmp/
+
+# ── infra secrets (jarvis self-hosting) ──
+
+# cloudflared
+*.cloudflared.json
+**/cloudflared/*.json
+**/cloudflared/cert.pem
+**/cloudflared/config.yml
+.cloudflared/
+
+# Tailscale
+tailscale.state
+/var/lib/tailscale/
+*.tailscale.key
+
+# Docker compose state / volumes
+**/volumes/
+**/data/
+**/postgres-data/
+**/storage-data/
+docker-compose.override.yml
+
+# Supabase
+.env.local
+.env.production
+supabase/.branches/
+supabase/.temp/
+
+# SSH / TLS / GPG
+id_rsa
+id_ed25519
+*.pem
+*.key
+*.crt
+*.pfx
+*.p12
+authorized_keys
+known_hosts
+*.gpg
+*.asc
+
+# Secrets-ish dotfiles
+.netrc
+.pgpass
+.aws/
+.kube/config
+
+# systemd drop-in con secret
+*-override.conf
+
+# editor scratch
+*.bak
+*.orig
+
+# host-audit scratch (lo script audit può lasciare /tmp/host-audit-*.md locali)
+host-audit-*.md
+!.planning/phases/*/host-audit-report.md
+!.planning/phases/*/host-audit-report-*.md
