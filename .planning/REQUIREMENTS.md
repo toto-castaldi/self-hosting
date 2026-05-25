@@ -46,10 +46,10 @@ Each requirement is observable / user-testable from Antonio's perspective (he is
 - [x] **REPO-01**: `gitleaks` v8 configurato come pre-push hook locale + GitHub Action; custom rules per Cloudflare Tunnel UUID, IP pubblici, email personali, paths cloudflared, JWT-like strings
 - [x] **REPO-02**: `.gitignore` esteso con: cloudflared credentials JSON / cert.pem, `.env*` (incluso `.env.local`), Docker volume mount roots, Tailscale state, SSH keys, materiale TLS, systemd drop-in override
 - [x] **REPO-03**: README narrativo nuovo: overview → architecture diagram → stack list → decision log → security model → screenshots. Ogni asset identificativo sostituito con placeholder (`example.com`, `203.0.113.x`, UUID generico)
-- [ ] **REPO-04**: History squash su orphan branch `public-v1` (la storia attuale "rifare", "pre push" non ha valore narrativo e potrebbe contenere il README pre-sanitize)
+- [x] **REPO-04**: History squash su orphan branch `public-v1` (la storia attuale "rifare", "pre push" non ha valore narrativo e potrebbe contenere il README pre-sanitize)
 - [x] **REPO-05**: `LICENSE` aggiunto (decisione: nessuna LICENSE = all-rights-reserved, OPPURE dual MIT/CC BY 4.0 — da chiudere in plan-phase Repo)
-- [ ] **REPO-06**: Pre-publish checklist passata (bundle backup → grep → gitleaks → trufflehog → exiftool sugli screenshot → push su nuovo remote public) — output loggato come evidence in `.planning/`
-- [ ] **REPO-07**: Repo pushato pubblico su GitHub, README pubblico verificato (rendering, no leak visibile)
+- [x] **REPO-06**: Pre-publish checklist passata (bundle backup → grep → gitleaks → trufflehog → exiftool sugli screenshot → push su nuovo remote public) — output loggato come evidence in `.planning/`
+- [x] **REPO-07**: Repo pushato pubblico su GitHub, README pubblico verificato (rendering, no leak visibile)
 
 ## v2 Requirements
 
@@ -84,7 +84,7 @@ Aggiornato dopo creazione ROADMAP.md.
 |-------------|-------|--------|
 | HOST-01 ... HOST-05 | Phase 1 | Complete (Plan 01 host-harden) |
 | REPO-01, REPO-02, REPO-03, REPO-05 | Phase 1 | Complete (Plan 02 repo-sanitize) |
-| REPO-04, REPO-06, REPO-07 | Phase 1 | Pending (Plan 03 repo-publish) |
+| REPO-04, REPO-06, REPO-07 | Phase 1 | Complete (Plan 03 repo-publish) |
 | NET-01 ... NET-05 | Phase 2 | Pending |
 | LUMIO-01 ... LUMIO-03 | Phase 3 | Pending |
 | LUMIO-04 ... LUMIO-07 | Phase 4 | Pending |

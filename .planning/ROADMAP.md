@@ -23,7 +23,7 @@
 Plans:
 - [x] 01-host-harden-PLAN.md — Audit-first + hardening Ubuntu (SSH, Docker, ufw, filesystem layout, unattended-upgrades, Tailscale verify)
 - [x] 02-repo-sanitize-PLAN.md — .gitignore esteso, gitleaks v8 + custom rules + pre-push + GH Action, README sanitize-in-place, LICENSE MIT
-- [ ] 03-repo-publish-PLAN.md — Pre-publish checklist, squash a orphan public-v1, force-push, flip visibility public, smoke verify
+- [x] 03-repo-publish-PLAN.md — Pre-publish checklist, squash a orphan public-v1, force-push, flip visibility public (SKIPPED — già public), smoke verify
 
 **UI hint:** no
 
